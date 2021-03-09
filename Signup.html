@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link href="signup.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+
+    function load ()
+    {
+
+      document.getElementById('register').style="display:none;";
+      document.getElementById('check').value="Register";
+
+    }
+
+   function register ()
+   {
+
+      document.getElementById('register').style="height:100%;";
+      document.getElementById('login').style="display:none";
+      document.getElementById('check').value="Login";
+      //document.getElementById('header').style="display:none";
+
+    }
+
+  function login ()
+  {
+
+   document.getElementById('register').style="display:none;";
+   document.getElementById('login').style="display:block;";
+   document.getElementById('check').value="Register";
+   //document.getElementById('header').style="display:none";
+
+  }
+
+ function check ()
+ {
+
+    var che= document.getElementById('check').value;
+    if(che=="Login")
+    {
+
+      document.getElementById('register').style="display:none;";
+      document.getElementById('login').style="display:block;";
+      document.getElementById('check').value="Register";
+
+    }
+
+    else
+    {
+
+      document.getElementById('register').style="height:100%;";
+      document.getElementById('login').style="display:none";
+      document.getElementById('check').value="Login";
+
+    }
+
+  }
+
+  function upperCaseF(a)
+  {
+
+    setTimeout(function()
+    {
+
+      a.value = a.value.toUpperCase();
+
+    }, 1);
+
+  }
+
+  function validation()
+  {
+
+      var check=document.getElementById('email').type;
+      if(check=="email")
+      {
+          var value=document.getElementById('email').value;
+          if(value=="")
+          {
+
+              document.getElementById('error').innerHTML="Incorrect Email Address";
+
+          }
+      }
+  }
+
+    </script>
+  </head>
+  <html>
+	<head>
+		<title>Login And SignUp Page || Login</title>
+
+
+	</head>
+
+
+	<body style="background-color:grey;"  onload="load()">
+
+        <div>
+     <img src="sporto.png">
+    </div>
+    <div class="topnav">
+
+        <a class="active" href="homepage.html">Home</a>
+
+    </div>
+
+		<div class="header" id="header">
+			<a class="brand" href="">Login And SignUp Page</a>
+
+			<ul class="left">
+				<li><input id="check" class="btn" type="button" onclick="check()" value=""></li>
+
+			</ul>
+		</div>
+
+		<div class="outer" id="outer">
+
+			<div class="boxx" id="login">
+                <h1> Welcome Back User </h1>
+
+				<form action="iplog.php" method="POST">
+
+					<label for="email" align="left">Email ID: </label>
+					<input  type="email" class="lbox" name="email" id="email" floatalign="right" value=""placeholder="Email ID" onkeyup="validation()" ><br>
+					<p style="color:red;" id="error"><br><br></p>
+
+					<label for="password">Password: </label>
+					<input type="password"  class="lbox" name="pass" id="pass" align="right" value=""placeholder="Password"><br><br>
+
+					<button name="login" class="button" value="login">LOGIN</button>
+				</form>
+			</div>
+
+
+			<div class="boxx" id="register">
+                <h2> Sign Up for Free </h2>
+
+				<form action="ipreg.php" method="POST" >
+
+
+				<input class="sbox" type="text" name="username" id="username" value="" placeholder="Enter Your Username"><br><br><br>
+
+                <input class="sbox" type="text" onkeydown="upperCaseF(this)" name="gender" id="gender" value="M"placeholder="Enter Gender"><br><br><br>
+
+				<input class="sbox" type="email" name="email" id="email" value=""placeholder="Enter Your Email ID"><br><br><br>
+
+				<input class="sbox" type="text" name="mob" id="mob" value=""placeholder="Enter Your Mobile No."><br><br><br>
+
+				<input class="sbox" type="password" name="pass" id="pass" value=""placeholder="Enter The Password"><br><br><br>
+
+				<input class="sbox" type="password" name="con_pass" id="con_pass" value=""placeholder="Re-Enter to Confirm Password"><br><br><br>
+                <div id="password_error"></div>
+
+				<button name="signup" class="button" value="signup">GET STARTED</button>
+				</form>
+			</div>
+
+
+		</div>
+        <br>
+<div class="abc">
+    <a href="contact.html">Contact us</a>
+    <a href="About_Us.html">About us</a>
+    <a href="find.html">Find us</a>
+</div>
+  </body>
+</html>
